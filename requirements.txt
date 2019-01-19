@@ -1,0 +1,5 @@
+Flask==1.0.2
+gunicorn==19.9.0
+Jinja2==2.10
+psycopg2==2.7.6.1
+SQLAlchemy==1.2.16

@@ -1,0 +1,34 @@
+    {% extends "base.html" %}
+    {% block content %}
+    <p>{{ msg }}</p>
+        <a href= "{{ url_for('login') }}">logout</a>
+
+    <p>Todo一覧</p>
+    <table>
+        <tr>
+            <th>日時</th>
+            <th>内容</th>
+            <th>選択</th>
+        </tr>
+        {% for todo in todos %}
+        <tr>
+            <th>{{ todo.date }}</th>
+            <th>{{ todo.body }}</th>
+            <th>
+                <form action="/delete_todo/", method="POST">
+                    <input type="hidden" name="id" value="{{ todo.id }}">
+                    <input type="hidden" name="name" value="{{ name }}">
+                    <input type="button" value="削除" onclick="submit();">
+                </form>
+            </th>
+        </tr>
+        {% endfor %}
+    </table>
+    <p>Todo 追加</p>
+    <form action="/add_todo/", method="POST">
+        <input type="hidden" name="name" value="{{ name }}">
+        <input name="date"></input>
+        <textarea name="body" cols="30" rows="10"></textarea>
+        <input type="button" value="追加" onclick="submit();">
+    {% endblock %}
+    </form>

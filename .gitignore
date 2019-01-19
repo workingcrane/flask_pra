@@ -1,0 +1,4 @@
+__pycache__
+.vscode
+app.db
+flask_pra

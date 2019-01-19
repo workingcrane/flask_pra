@@ -1,0 +1,18 @@
+    {% extends "base.html" %}
+    {% block content%}
+    {% if msg %}
+    <p>{{ msg }}</p>
+    {% endif %}
+    <p>ログインしてくれ</p>
+    <form action="/" method="POST">
+        <input name="name">名前よろ</input>
+        <input name="password">パスワードよろ</input>
+        <input type="button" onclick="submit();" value="送信">
+    </form>
+    <p>登録してない方はこちらからよろしく</p>
+    <form action="/signup/" method="POST">
+        <input name="name">名前</input>
+        <input name="password">password</input>
+        <input type="button" onclick="submit();" value="登録">
+    </form>
+    {% endblock %}
